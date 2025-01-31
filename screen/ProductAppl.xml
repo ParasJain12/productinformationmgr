@@ -6,5 +6,130 @@
         <service-call name="create#moqui.product.Product"/>
         <default-response url="."/>
     </transition>
-    
+    <transition name="createProductContent">
+        <service-call name="create#moqui.productcontent.ProductContent"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductPrice">
+        <service-call name="create#moqui.productprice.ProductPrice"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductDimension">
+        <service-call name="create#moqui.productdimension.ProductDimension"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductAssociation">
+        <service-call name="create#moqui.productassociation.ProductAssociation"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductFeature">
+        <service-call name="create#moqui.productfeature.ProductFeature"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductFeatureAppl">
+        <service-call name="create#moqui.productfeatureappl.ProductFeatureAppl"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductCategory">
+        <service-call name="create#moqui.productcategory.ProductCategory"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createProductCategoryMember">
+        <service-call name="create#moqui.productcategorymember.ProductCategoryMember"/>
+        <default-response url="."/>
+    </transition>
+
+    <widgets>
+        <container-dialog id="CreateProductDialog" button-text="Create Product">
+            <form-single name="CreateProduct" transition="createProduct">
+                <auto-fields-entity entity-name="Product" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductContentDialog" button-text="Create Product Content">
+            <form-single name="CreateProductContent" transition="createProductContent">
+                <auto-fields-entity entity-name="ProductContent" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductPriceDialog" button-text="Create Product Price">
+            <form-single name="CreateProductPrice" transition="createProductPrice">
+                <auto-fields-entity entity-name="ProductPrice" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductDimensionDialog" button-text="Create Product Dimension">
+            <form-single name="CreateProductDimension" transition="createProductDimension">
+                <auto-fields-entity entity-name="ProductDimension" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductAssociationDialog" button-text="Create Product Association">
+            <form-single name="CreateProductAssociation" transition="createProductAssociation">
+                <auto-fields-entity entity-name="ProductAssociation" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductFeatureDialog" button-text="Create Product Feature">
+            <form-single name="CreateProductFeature" transition="createProductFeature">
+                <auto-fields-entity entity-name="ProductFeature" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductFeatureApplDialog" button-text="Create Product FeatureAppl">
+            <form-single name="CreateProductFeatureAppl" transition="createProductFeatureAppl">
+                <auto-fields-entity entity-name="ProductFeatureAppl" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductCategoryDialog" button-text="Create Product Category">
+            <form-single name="CreateProductCategory" transition="createProductCategory">
+                <auto-fields-entity entity-name="ProductCategory" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateProductCategoryMemberDialog" button-text="Create Product CategoryMember">
+            <form-single name="CreateProductCategoryMember" transition="createProductCategoryMember">
+                <auto-fields-entity entity-name="ProductCategoryMember" field-type="edit"/>
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+    </widgets>
+
 </screen>
