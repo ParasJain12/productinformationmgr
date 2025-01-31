@@ -1,0 +1,10 @@
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="file://D:/sandbox/moqui-framework/framework/xsd/xml-screen-3.xsd"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd" require-authentication="anonymous-all"
+        default-menu-title="ProductAppl">
+    <transition name="createProduct">
+        <service-call name="create#moqui.product.Product"/>
+        <default-response url="."/>
+    </transition>
+    
+</screen>
