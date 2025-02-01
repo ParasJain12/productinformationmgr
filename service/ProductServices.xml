@@ -1,0 +1,25 @@
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="delete" noun="Product">
+        <in-parameters>
+            <parameter name="productId"/>
+        </in-parameters>
+        <actions>
+            <entity-find-one entity-name="moqui.product.Product" value-field="productList">
+                <field-map field-name="productId" from="context.productId"/>
+            </entity-find-one>
+            <if condition="productList != null">
+                <entity-delete-related value-field="productList" relationship-name="ProductContent"/>
+                <entity-delete-related value-field="productList" relationship-name="ProductPrice"/>
+                <entity-delete-related value-field="productList" relationship-name="ProductDimension"/>
+                <entity-delete-related value-field="productList" relationship-name="ProductAssociation"/>
+                <entity-delete-related value-field="productList" relationship-name="ProductCategoryMember"/>
+                <entity-delete-related value-field="productList" relationship-name="ProductFeatureAppl"/>
+
+                <entity-delete value-field="productList"/>
+                <else>
+                    <message>Object does not exists</message>
+                </else>
+            </if>
+        </actions>
+    </service>
+</services>

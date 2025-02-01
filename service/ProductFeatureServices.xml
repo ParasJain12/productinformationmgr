@@ -1,0 +1,21 @@
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+
+    <service verb="delete" noun="ProductFeature">
+        <in-parameters>
+            <parameter name="productFeatureId"/>
+        </in-parameters>
+        <actions>
+            <entity-find-one entity-name="moqui.productfeature.ProductFeature" value-field="featureList">
+                <field-map field-name="productFeatureId" from="context.productFeatureId"/>
+            </entity-find-one>
+            <if condition="featureList != null">
+                <entity-delete-related value-field="featureList" relationship-name="ProductFeatureAppl"/>
+
+                <entity-delete value-field="featureList"/>
+                <else>
+                    <message>Object does not exits</message>
+                </else>
+            </if>
+        </actions>
+    </service>
+</services>
